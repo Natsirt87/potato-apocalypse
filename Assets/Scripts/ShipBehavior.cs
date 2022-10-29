@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShipBehavior : MonoBehaviour
 {
     public float speed = 5f;
-    public float brakeSpeed = 1f;
+    public float brakeSpeed = 2f;
     public float rotateSpeed = 3f;
 
     private Rigidbody2D rb2d;
@@ -19,11 +19,11 @@ public class ShipBehavior : MonoBehaviour
         // Turning
         if (Input.GetKey(KeyCode.A)) {
             transform.Rotate(0,0,rotateSpeed);
-            rb2d.AddForce(-transform.right * rotateSpeed);
+            //rb2d.AddForce(-transform.right * rotateSpeed);
         }
         if (Input.GetKey(KeyCode.D)) {
             transform.Rotate(0,0,-1 * rotateSpeed);
-            rb2d.AddForce(transform.right * rotateSpeed);
+            //rb2d.AddForce(transform.right * rotateSpeed);
         }
 
         // Change Speed
