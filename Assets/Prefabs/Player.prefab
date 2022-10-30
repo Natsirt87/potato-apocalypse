@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb3b2b1163a14dba58aaeb737d1362db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pGain: 0.65
-  dGain: 5.3
+  pGain: 0.35
+  dGain: 4.2
   iGain: 0
   iSaturation: 1
   rotatePower: 1

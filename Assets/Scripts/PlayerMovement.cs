@@ -6,14 +6,22 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float pGain = 1f;
-    public float dGain = 1f;
-    public float iGain = 1f;
-    public float iSaturation = 1f;
-    public float rotatePower = 1f;
+    [Header("Rotation Controller")]
+    [SerializeField] private float rotPGain = 1f;
+    [SerializeField] private float rotDGain = 1f;
+    [SerializeField] private float rotIGain = 1f;
+    [SerializeField] private float rotIMax = 1f;
+    [SerializeField] private float rotatePower = 1f;
 
+    [Space(10)] 
+    
+    [Header("Thrust Controller")]
+    [SerializeField] private float thrust = 5f;
+    [SerializeField] private float turnForce = 1f;
+    
     private Camera _camera;
     private Rigidbody2D _body;
+    private Vector2 _bounds;
 
     private bool _derivativeInit = false;
     private float _valueLast = 0f;
@@ -23,25 +31,33 @@ public class PlayerMovement : MonoBehaviour
     {
         _camera = Camera.main;
         _body = GetComponent<Rigidbody2D>();
+        _bounds = _camera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
     }
     
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-        float currentRotation = _body.rotation;
-        Vector3 vectorToMouse = _camera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)_body.position;
-        float targetRotation = Quaternion.LookRotation(Vector3.forward, vectorToMouse).eulerAngles.z;
-        float dt = Time.fixedDeltaTime;
-        
-        _body.AddTorque(PidRotation(currentRotation, targetRotation, dt ) * rotatePower, ForceMode2D.Force);
+        RotateToMouse();
+        HandleThrust();
+
+        Vector2 wrappedPos = _body.position;
+        float wrapX = _bounds.x + 2f;
+        float wrapY = _bounds.y + 1f;
+        wrappedPos.x = (((wrappedPos.x + wrapX) % (wrapX * 2)) + (wrapX * 2)) % (wrapX * 2) - wrapX;
+        wrappedPos.y = (((wrappedPos.y + wrapY) % (wrapY * 2)) + (wrapY * 2)) % (wrapY * 2) - wrapY;
+        _body.position = wrappedPos;
     }
     
     // Rotate the player to look at the mouse position with physics magic 
-    private float PidRotation(float current, float target, float dt)
+    private void RotateToMouse()
     {
+        float current = _body.rotation;
+        Vector3 vectorToMouse = _camera.ScreenToWorldPoint(Input.mousePosition) - (Vector3)_body.position;
+        float target = Quaternion.LookRotation(Vector3.forward, vectorToMouse).eulerAngles.z;
+        float dt = Time.fixedDeltaTime;
+        
         float error = AngleDifference(target, current);
-        float p = pGain * error;
+        float p = rotPGain * error;
 
         float valueRateOfChange = AngleDifference(current, _valueLast);
         _valueLast = current;
@@ -49,8 +65,7 @@ public class PlayerMovement : MonoBehaviour
         float d = 0f;
         if (_derivativeInit)
         {
-
-            d = dGain * -valueRateOfChange;
+            d = rotDGain * -valueRateOfChange;
         }
         else
         {
@@ -58,14 +73,29 @@ public class PlayerMovement : MonoBehaviour
         }
 
         _integrationStored += (error * dt);
-        _integrationStored = Mathf.Clamp(_integrationStored + (error * dt), -iSaturation, iSaturation);
-        float i = iGain * _integrationStored;
-
-        return p + i + d;
+        _integrationStored = Mathf.Clamp(_integrationStored + (error * dt), -rotIMax, rotIMax);
+        float i = rotIGain * _integrationStored;
+        
+        _body.AddTorque((p + i + d) * rotatePower, ForceMode2D.Force);;
     }
 
     private float AngleDifference(float a, float b)
     {
-        return (a - b + 540) % 360 - 180;
+        float diff = a - b;
+        while (diff < -180) diff += 360;
+        while (diff > 180) diff -= 360;
+        return diff;
+    }
+
+    private void HandleThrust()
+    {
+        Vector2 up = transform.up;
+        Vector2 right = transform.right;
+        
+        _body.AddForce(thrust * Input.GetAxis("Vertical") * up, ForceMode2D.Force);
+        _body.AddForce(thrust * Input.GetAxis("Horizontal") * right, ForceMode2D.Force);
+
+        float lateralVelocity = Vector2.Dot(_body.velocity, right);
+        _body.AddForce(turnForce * -lateralVelocity * right, ForceMode2D.Force);
     }
 }

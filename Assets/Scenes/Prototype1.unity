@@ -283,9 +283,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4943974863686304520, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304520, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_LocalPosition.x
@@ -326,6 +342,34 @@ PrefabInstance:
     - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: dGain
+      value: 4.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: pGain
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: thrust
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: rotDGain
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: rotIGain
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: rotPGain
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: turnForce
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304758, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_Name
