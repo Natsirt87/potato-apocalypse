@@ -26,20 +26,19 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    // shooting eggs
+    // spawning eggs 
     protected IEnumerator SpawnProjectile()
     {
+        // Rigidbody2D eggRB;
+        // eggRB.AddForce();
         shoot = false;
         GameObject spawnedEgg = Instantiate(prefab);
         spawnedEgg.transform.up = this.transform.up;
         spawnedEgg.transform.position = this.transform.position;
 
-        //spawnedEgg.GetComponent<EggBehavior>().eggCount = this;
-
-        //slider.transform.localScale = new Vector3(1, 2, 0);
-
         yield return new WaitForSeconds(.2f);
         shoot = true;
     }
+
 
 }

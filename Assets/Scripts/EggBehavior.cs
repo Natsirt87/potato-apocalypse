@@ -30,7 +30,6 @@ public class EggBehavior : MonoBehaviour
     void OnBecameInvisible()//destroy the egg on collision with enemy
     {
         Destroy(this.gameObject);
-        //eggCount.eggCount();
     }
 
     void OnCollisionEnter2D(Collision2D collision)

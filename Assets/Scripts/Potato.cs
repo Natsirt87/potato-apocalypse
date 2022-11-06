@@ -30,29 +30,12 @@ public class Potato : MonoBehaviour
         if(collision.gameObject.CompareTag("Egg"))
         {
             health-=25;
-            //Color fadeColor = GetComponent<SpriteRenderer>().color;
-            //fadeColor.a = health * 0.01f;
-            //GetComponent<SpriteRenderer>().color = fadeColor;
 
             if(health == 0)
             {
                 Destroy(this.gameObject);
-                // manager.spawnPlane();
-                // manager.destroyedEnemyCount();
             }
         }
-        // }
-        // else if(collider.gameObject.CompareTag("Player"))
-        // {
-        //     manager.spawnPlane();
-        //     Destroy(this.gameObject);
-        //     manager.destroyedEnemyCount();
-        // }
-        // else if(!collider.gameObject.CompareTag("Enemy") && !collider.gameObject.CompareTag("WayPoint"))
-        // {
-        //     Destroy(this.gameObject);
-        //     manager.spawnPlane();
-        // }
 
     }
     
