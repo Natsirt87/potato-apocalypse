@@ -188,3 +188,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 9004637276428000802, guid: fa1257ed6f4494e98b9dd7480ea25140, type: 3}
+  projectileForce: 15

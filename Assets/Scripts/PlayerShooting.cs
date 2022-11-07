@@ -8,6 +8,7 @@ public class PlayerShooting : MonoBehaviour
 {
     private bool shoot = true;
     public GameObject prefab; 
+    public float projectileForce = 10f;
 
     void Start()
     {
@@ -30,18 +31,17 @@ public class PlayerShooting : MonoBehaviour
     protected IEnumerator SpawnProjectile()
     {
         shoot = false;
-        GameObject spawnedEgg = Instantiate(prefab);
+        GameObject spawnedLaser = Instantiate(prefab);
 
         //Physics.IgnoreCollision((Collider) spawnedEgg.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
 
-        spawnedEgg.transform.up = this.transform.up;
-        spawnedEgg.transform.position = this.transform.position;
+        spawnedLaser.transform.right = this.transform.up;
+        spawnedLaser.transform.position = this.transform.position;
 
-        float value = 60f;
-        Rigidbody2D eggRB = spawnedEgg.GetComponent<Rigidbody2D>();
+        Rigidbody2D laserRB = spawnedLaser.GetComponent<Rigidbody2D>();
 
-        Vector3 force = transform.up * value;
-        eggRB.AddForce(force, ForceMode2D.Impulse);
+        Vector3 force = transform.up * projectileForce;
+        laserRB.AddForce(force, ForceMode2D.Impulse);
 
         // wait for .2 seconds    
         yield return new WaitForSeconds(.2f);
