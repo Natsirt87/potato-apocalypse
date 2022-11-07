@@ -34,10 +34,11 @@ public class PlayerShooting : MonoBehaviour
 
         //Physics.IgnoreCollision((Collider) spawnedEgg.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
 
-        spawnedEgg.transform.up = this.transform.up;
+        spawnedEgg.transform.right = this.transform.up;
         spawnedEgg.transform.position = this.transform.position;
+        
 
-        float value = 60f;
+        float value = 5f;
         Rigidbody2D eggRB = spawnedEgg.GetComponent<Rigidbody2D>();
 
         Vector3 force = transform.up * value;
