@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 // add rigid body
 // add collider
-public class EggBehavior : MonoBehaviour
+public class ProjectileBehavior : MonoBehaviour
 {
 
     void OnBecameInvisible()//destroy the egg on collision with enemy
