@@ -17,8 +17,7 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Thrust Controller")]
     [SerializeField] private float thrust = 5f;
-    [SerializeField] private float turnForce = 1f;
-    
+
     private Camera _camera;
     private Rigidbody2D _body;
     private Vector2 _bounds;
@@ -92,10 +91,9 @@ public class PlayerMovement : MonoBehaviour
         Vector2 up = transform.up;
         Vector2 right = transform.right;
         
+        
+        
         _body.AddForce(thrust * Input.GetAxis("Vertical") * up, ForceMode2D.Force);
         _body.AddForce(thrust * Input.GetAxis("Horizontal") * right, ForceMode2D.Force);
-
-        float lateralVelocity = Vector2.Dot(_body.velocity, right);
-        _body.AddForce(turnForce * -lateralVelocity * right, ForceMode2D.Force);
     }
 }
