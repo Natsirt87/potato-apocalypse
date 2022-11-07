@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1272149446653661457}
   - component: {fileID: 1272149446653661456}
   - component: {fileID: 1272149446653661468}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SimplePotato
-  m_TagString: Untagged
+  m_TagString: Potato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -335,4 +335,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  manager: {fileID: 0}
   movementForce: 2

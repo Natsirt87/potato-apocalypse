@@ -374,9 +374,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06694ccb929f54cfc9753f039ea4339f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  simplePotato: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
-  numPotatoes: 20
-  staggerTime: 0.5
+  waves:
+  - numEnemies: 10
+    enemies:
+    - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
+      probability: 1
+      spawnInterval: 5
+  - numEnemies: 15
+    enemies:
+    - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
+      probability: 1
+      spawnInterval: 1
+  waveBreakTime: 15
 --- !u!1001 &4731872295115095092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,9 +466,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6280298529425197469, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: projectileForce
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304520, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_LinearDrag
-      value: 1
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304520, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_AngularDrag
@@ -479,11 +492,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_LocalPosition.x
@@ -535,7 +548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: thrust
-      value: 5.75
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: rotDGain
@@ -547,7 +560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: rotPGain
-      value: 0.35
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: turnForce

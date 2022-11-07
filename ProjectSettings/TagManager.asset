@@ -5,15 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Planet
+  - Egg
+  - Potato
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Projectile
   - 
   - 
   - 
