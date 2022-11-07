@@ -48,5 +48,4 @@ public class PlayerShooting : MonoBehaviour
         shoot = true;
     }
 
-
 }
