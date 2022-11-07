@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2907663247238851583}
   - component: {fileID: 3173437066475740743}
   - component: {fileID: 7330335502819004074}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Egg
   m_TagString: Egg
   m_Icon: {fileID: 0}
@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233c89cda1e7840b7b6f6d5fdfbfcbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
 --- !u!50 &7330335502819004074
 Rigidbody2D:
   serializedVersion: 4
@@ -156,8 +155,8 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

@@ -15,7 +15,7 @@ public class PlayerShooting : MonoBehaviour
     }
     
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(Input.GetKey(KeyCode.Space))
         {
@@ -29,13 +29,21 @@ public class PlayerShooting : MonoBehaviour
     // spawning eggs 
     protected IEnumerator SpawnProjectile()
     {
-        // Rigidbody2D eggRB;
-        // eggRB.AddForce();
         shoot = false;
         GameObject spawnedEgg = Instantiate(prefab);
+
+        //Physics.IgnoreCollision((Collider) spawnedEgg.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
+
         spawnedEgg.transform.up = this.transform.up;
         spawnedEgg.transform.position = this.transform.position;
 
+        float value = 60f;
+        Rigidbody2D eggRB = spawnedEgg.GetComponent<Rigidbody2D>();
+
+        Vector3 force = transform.up * value;
+        eggRB.AddForce(force, ForceMode2D.Impulse);
+
+        // wait for .2 seconds    
         yield return new WaitForSeconds(.2f);
         shoot = true;
     }
