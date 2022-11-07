@@ -8,7 +8,7 @@ public class Potato : MonoBehaviour
 {
     [SerializeField] protected float health = 100f;
     public PotatoManager manager;
-    
+
     protected Rigidbody2D Body;
 
     void Start()
@@ -20,8 +20,23 @@ public class Potato : MonoBehaviour
     {
         if (col.GameObject().CompareTag("Planet"))
         {
-            manager.PotatoDestroyed(this);
+            manager.EnemyDestroyed(this);
             Destroy(gameObject);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Egg"))
+        {
+            health -= 25;
+
+            if (health == 0)
+            {
+                manager.EnemyDestroyed(this);
+                Destroy(this.gameObject);
+            }
+        }
+    }
+    
 }
