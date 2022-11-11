@@ -6,9 +6,8 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    private bool shoot = true;
-    public GameObject prefab; 
-    public float projectileForce = 10f;
+    public MasherShooting masher;
+    public KnifeShooting knife;
 
     void Start()
     {
@@ -16,36 +15,17 @@ public class PlayerShooting : MonoBehaviour
     }
     
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        // shooting from both
         if(Input.GetKey(KeyCode.Space))
         {
-            if(shoot)
+            if(masher.shoot && knife.shoot2)
             {
-                StartCoroutine(SpawnProjectile());
+                StartCoroutine(masher.SpawnFromMasher());
+                StartCoroutine(knife.SpawnFromKnife());
             }
         }
-    }
-
-    // spawning eggs 
-    protected IEnumerator SpawnProjectile()
-    {
-        shoot = false;
-        GameObject spawnedLaser = Instantiate(prefab);
-
-        //Physics.IgnoreCollision((Collider) spawnedEgg.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
-
-        spawnedLaser.transform.right = this.transform.up;
-        spawnedLaser.transform.position = this.transform.position;
-
-        Rigidbody2D laserRB = spawnedLaser.GetComponent<Rigidbody2D>();
-
-        Vector3 force = transform.up * projectileForce;
-        laserRB.AddForce(force, ForceMode2D.Impulse);
-
-        // wait for .2 seconds    
-        yield return new WaitForSeconds(.2f);
-        shoot = true;
     }
 
 }
