@@ -1,41 +1,92 @@
+using System;
 using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
+[Serializable]
+public class WaveEnemy
+{
+    public GameObject enemyPrefab;
+    public float probability;
+    public float spawnInterval;
+    
+    private float _spawnTimer = 0f;
+
+    public void IncrementSpawnTimer() { _spawnTimer += Time.deltaTime; }
+    public void ResetSpawnTimer() { _spawnTimer = 0f; }
+    public bool SpawnTimerReached() { return _spawnTimer >= spawnInterval; }
+}
+
+[Serializable]
+public class Wave
+{
+    public int numEnemies;
+    public List<WaveEnemy> enemies;
+}
 
 public class PotatoManager : MonoBehaviour
 {
-    public GameObject simplePotato;
-    public int numPotatoes = 20;
-    public float staggerTime = 2f;
-    
+    public List<Wave> waves;
+    public float waveBreakTime = 10f;
+
+    private int _waveNumber = -1;
+    private int _enemiesLeft;
     private Vector2 _bounds;
-    private List<Potato> _potatoes;
-    private float _spawnTimer = 0;
+    private List<Potato> _enemies;
+    private float _waveBreakTimer = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         _bounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
-        _potatoes = new List<Potato>();
+        _enemies = new List<Potato>();
+        StartWave();
     }
 
     void Update()
     {
-        if (_spawnTimer < staggerTime)
+        Debug.Log("Wave: " + _waveNumber + ", Enemies Left: " + _enemiesLeft + ", Break Timer: " + _waveBreakTimer);
+        if (_enemiesLeft > _enemies.Count)
         {
-            _spawnTimer += Time.deltaTime;
+            foreach (WaveEnemy enemy in waves[_waveNumber].enemies)
+            {
+                if (!enemy.SpawnTimerReached())
+                {
+                    enemy.IncrementSpawnTimer();
+                }
+                else
+                {
+                    enemy.ResetSpawnTimer();
+                    // TODO: Probability check to determine if the enemy should be spawned
+                    SpawnEnemy(enemy.enemyPrefab);
+                }
+            }
         }
-        else if (_potatoes.Count < numPotatoes)
+        else if (_enemiesLeft <= 0)
         {
-            _spawnTimer = 0;
-            SpawnSimplePotato();
+            if (_waveBreakTimer >= waveBreakTime)
+            {
+                StartWave();
+            }
+            else
+            {
+                _waveBreakTimer += Time.deltaTime;
+            }
         }
     }
 
-    private void SpawnSimplePotato()
+    private void StartWave()
     {
-        GameObject spawnedPotato = Instantiate(simplePotato);
+        _waveBreakTimer = 0;
+        _waveNumber++;
+        _enemiesLeft = waves[_waveNumber].numEnemies;
+    }
+
+    private void SpawnEnemy(GameObject enemyType)
+    {
+        GameObject spawnedPotato = Instantiate(enemyType);
 
         int screenSide = Random.Range(0, 4);
 
@@ -59,13 +110,16 @@ public class PotatoManager : MonoBehaviour
                 break;
         }
 
-        Potato potato = spawnedPotato.GetComponent<SimplePotato>();
+        Potato potato = spawnedPotato.GetComponent<Potato>();
         potato.manager = this;
-        _potatoes.Add(potato);
+        _enemies.Add(potato);
     }
 
-    public void PotatoDestroyed(Potato destroyedPotato)
+    public void EnemyDestroyed(Potato destroyedPotato)
     {
-        _potatoes.Remove(destroyedPotato);
+        if (_enemies.Remove(destroyedPotato))
+        {
+            _enemiesLeft--;
+        }
     }
 }

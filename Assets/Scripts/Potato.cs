@@ -20,7 +20,7 @@ public class Potato : MonoBehaviour
     {
         if (col.GameObject().CompareTag("Planet"))
         {
-            manager.PotatoDestroyed(this);
+            manager.EnemyDestroyed(this);
             Destroy(gameObject);
         }
     }
@@ -29,14 +29,14 @@ public class Potato : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Egg"))
         {
-            health-=25;
+            health -= 25;
 
-            if(health == 0)
+            if (health == 0)
             {
+                manager.EnemyDestroyed(this);
                 Destroy(this.gameObject);
             }
         }
-
     }
     
 }
