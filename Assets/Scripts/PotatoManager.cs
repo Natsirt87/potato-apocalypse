@@ -64,7 +64,7 @@ public class PotatoManager : MonoBehaviour
                 }
             }
         }
-        else
+        else if (_enemiesLeft <= 0)
         {
             if (_waveBreakTimer >= waveBreakTime)
             {
@@ -117,7 +117,9 @@ public class PotatoManager : MonoBehaviour
 
     public void EnemyDestroyed(Potato destroyedPotato)
     {
-        _enemies.Remove(destroyedPotato);
-        _enemiesLeft--;
+        if (_enemies.Remove(destroyedPotato))
+        {
+            _enemiesLeft--;
+        }
     }
 }

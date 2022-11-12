@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 67949573}
   - component: {fileID: 67949576}
   - component: {fileID: 67949575}
+  - component: {fileID: 67949577}
   m_Layer: 0
   m_Name: BluePlanet
   m_TagString: Planet
@@ -246,6 +247,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &67949577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67949572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80fc0b50fac05558996a1414671588a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  rotationSpeed: 0.1
 --- !u!1 &396532728
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,12 +394,12 @@ MonoBehaviour:
     enemies:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
       probability: 1
-      spawnInterval: 5
+      spawnInterval: 1
   - numEnemies: 15
     enemies:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
       probability: 1
-      spawnInterval: 1
+      spawnInterval: 0.5
   waveBreakTime: 15
 --- !u!1001 &4731872295115095092
 PrefabInstance:
@@ -468,11 +483,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6280298529425197469, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: projectileForce
-      value: 7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304520, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304520, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_AngularDrag
@@ -489,14 +504,6 @@ PrefabInstance:
     - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304522, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_LocalPosition.x
@@ -548,11 +555,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: thrust
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: rotDGain
-      value: 3.75
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304523, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: rotIGain
