@@ -2,6 +2,7 @@ using System;
 using System.Buffers;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -31,6 +32,8 @@ public class PotatoManager : MonoBehaviour
     public List<Wave> waves;
     public float waveBreakTime = 10f;
 
+    [SerializeField] private TextMeshProUGUI waveText;
+
     private int _waveNumber = -1;
     private int _enemiesLeft;
     private Vector2 _bounds;
@@ -46,8 +49,16 @@ public class PotatoManager : MonoBehaviour
     }
 
     void Update()
-    {
-        Debug.Log("Wave: " + _waveNumber + ", Enemies Left: " + _enemiesLeft + ", Break Timer: " + _waveBreakTimer);
+    {   
+        if (_waveBreakTimer == 0) 
+        {
+            waveText.text = "Wave: " + (_waveNumber + 1);
+        }
+        else
+        {
+            waveText.text = "Time until next wave: " + (int)(waveBreakTime - _waveBreakTimer);
+        }
+
         if (_enemiesLeft > _enemies.Count)
         {
             foreach (WaveEnemy enemy in waves[_waveNumber].enemies)

@@ -20,6 +20,7 @@ public class Potato : MonoBehaviour
     {
         if (col.GameObject().CompareTag("Planet"))
         {
+            col.GameObject().GetComponent<Planet>().Damage(10);
             manager.EnemyDestroyed(this);
             Destroy(gameObject);
         }
