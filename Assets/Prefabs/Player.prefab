@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 142221761321249627}
   - component: {fileID: 8589195536887593482}
   m_Layer: 0
-  m_Name: knife
+  m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,9 +97,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 543ef42dff12242658a759e99a61bad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoot2: 1
-  prefab: {fileID: 9004637276428000802, guid: fa1257ed6f4494e98b9dd7480ea25140, type: 3}
-  projectileForce: 10
+  projectile: {fileID: 9004637276428000802, guid: fa1257ed6f4494e98b9dd7480ea25140, type: 3}
+  shootKey: j
+  projectileForce: 20
+  shootInterval: 0.5
 --- !u!1 &4943974863686304758
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f7b0956fa8414acb92c0f796371c2e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masher: {fileID: 4197267891150717895}
-  knife: {fileID: 8589195536887593482}
+  weapons:
+  - {fileID: 8589195536887593482}
+  - {fileID: 4197267891150717895}
 --- !u!1 &6350836473087893683
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +305,7 @@ GameObject:
   - component: {fileID: 1821395369062638803}
   - component: {fileID: 4197267891150717895}
   m_Layer: 0
-  m_Name: toppng.com-potato-masher-3311x8000
+  m_Name: Masher
   m_TagString: Masher
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -388,6 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f7e672cab0f4706919e398a88e9aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoot: 1
-  prefab: {fileID: 9004637276428000802, guid: fa1257ed6f4494e98b9dd7480ea25140, type: 3}
+  projectile: {fileID: 9004637276428000802, guid: fa1257ed6f4494e98b9dd7480ea25140, type: 3}
+  shootKey: k
   projectileForce: 10
+  shootInterval: 0.2

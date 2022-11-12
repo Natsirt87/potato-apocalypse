@@ -6,13 +6,9 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public MasherShooting masher;
-    public KnifeShooting knife;
-
-    void Start()
-    {
-       
-    }
+    
+    public List<Weapon> weapons;
+    
     
     // Update is called once per frame
     void Update()
@@ -20,10 +16,9 @@ public class PlayerShooting : MonoBehaviour
         // shooting from both
         if(Input.GetKey(KeyCode.Space))
         {
-            if(masher.shoot && knife.shoot2)
+            foreach (Weapon weapon in weapons)
             {
-                StartCoroutine(masher.SpawnFromMasher());
-                StartCoroutine(knife.SpawnFromKnife());
+                weapon.TryShoot();
             }
         }
     }
