@@ -99,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9004637276428000802, guid: fa1257ed6f4494e98b9dd7480ea25140, type: 3}
   shootKey: j
-  projectileForce: 20
-  shootInterval: 0.5
+  projectileForce: 2
+  shootInterval: 0.2
 --- !u!1 &4943974863686304758
 GameObject:
   m_ObjectHideFlags: 0
@@ -391,5 +391,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 9004637276428000802, guid: c1ab6dcbcb2394f24ab2ed37603da051, type: 3}
   shootKey: k
-  projectileForce: 10
-  shootInterval: 0.2
+  projectileForce: 2
+  shootInterval: 0.8

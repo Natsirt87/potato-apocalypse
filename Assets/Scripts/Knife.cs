@@ -7,7 +7,7 @@ using UnityEngine;
 public class Knife : Weapon
 {
     public float projectileForce = 10f;
-    public float shootInterval = .3f;
+    public float shootInterval = .2f;
 
 
     // spawning laser from knife 
