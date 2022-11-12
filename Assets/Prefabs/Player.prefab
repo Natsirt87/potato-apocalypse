@@ -277,7 +277,6 @@ MonoBehaviour:
   rotIMax: 1
   rotatePower: 1
   thrust: 5
-  turnForce: 1
 --- !u!114 &3458005182447313823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f7e672cab0f4706919e398a88e9aae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 9004637276428000802, guid: fa1257ed6f4494e98b9dd7480ea25140, type: 3}
+  projectile: {fileID: 9004637276428000802, guid: c1ab6dcbcb2394f24ab2ed37603da051, type: 3}
   shootKey: k
   projectileForce: 10
   shootInterval: 0.2
