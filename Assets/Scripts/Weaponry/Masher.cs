@@ -9,25 +9,27 @@ public class Masher : Weapon
     public float projectileForce = 10f;
     public float shootInterval = 2f;
 
+    public float spawnOffset = 1f;
+    public int numLasers = 5;
+    public float spread = 20f;
+
 
     // spawning laser from knife 
     protected override IEnumerator Shoot()
     {
         canShoot = false;
 
-        int numOfLasers = 3;
-        float angleRange = -10;
-        for(int i = 0; i < numOfLasers; i++)
+        for(int i = 0; i < numLasers; i++)
         {
             GameObject spawnedLaser = Instantiate(projectile);
 
             spawnedLaser.transform.right = this.transform.parent.up;
-            spawnedLaser.transform.position = this.transform.position;
+            spawnedLaser.transform.position = this.transform.position + (transform.parent.up * spawnOffset);
 
-            spawnedLaser.transform.Rotate(0f, 0f, angleRange); 
-            angleRange+=10;
+            spawnedLaser.transform.Rotate(0f, 0f, -spread / 2 + (((spread) / (numLasers - 1)) * i)); 
             Rigidbody2D laserRB = spawnedLaser.GetComponent<Rigidbody2D>();
 
+            laserRB.velocity = transform.parent.GetComponent<Rigidbody2D>().velocity;
             Vector3 force = spawnedLaser.transform.right * projectileForce;
             laserRB.AddForce(force, ForceMode2D.Impulse);
         }

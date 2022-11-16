@@ -8,6 +8,7 @@ public class Knife : Weapon
 {
     public float projectileForce = 10f;
     public float shootInterval = .2f;
+    public float spawnOffset = 1f;
 
 
     // spawning laser from knife 
@@ -17,7 +18,7 @@ public class Knife : Weapon
         GameObject spawnedLaser = Instantiate(projectile);
 
         spawnedLaser.transform.right = this.transform.parent.up;
-        spawnedLaser.transform.position = this.transform.position;
+        spawnedLaser.transform.position = this.transform.position + (transform.parent.up * spawnOffset);
 
         Rigidbody2D laserRB = spawnedLaser.GetComponent<Rigidbody2D>();
 
