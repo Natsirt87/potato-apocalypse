@@ -21,5 +21,10 @@ public class Projectile : MonoBehaviour
             collision.gameObject.GetComponent<Potato>().damage(damage);
             Destroy(this.gameObject);
         }
+        else if (collision.gameObject.CompareTag("Planet"))
+        {
+            Destroy(this.gameObject);
+        }
+        Debug.Log("Collided");
     }
 }

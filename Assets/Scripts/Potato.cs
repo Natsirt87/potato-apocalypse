@@ -23,11 +23,11 @@ public class Potato : MonoBehaviour
         transform.Rotate(0f, 0f, UnityEngine.Random.Range(0f, 360f));
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.GameObject().CompareTag("Planet"))
+        if (col.gameObject.CompareTag("Planet"))
         {
-            col.GameObject().GetComponent<Planet>().Damage(10);
+            col.gameObject.GetComponent<Planet>().Damage(10);
             manager.EnemyDestroyed(this);
             Destroy(gameObject);
         }
