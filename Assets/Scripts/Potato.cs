@@ -11,32 +11,36 @@ public class Potato : MonoBehaviour
 
     protected Rigidbody2D Body;
 
-    void Start()
+    public virtual void Start()
     {
         Body = GetComponent<Rigidbody2D>();
+
+        float scaleFactor = UnityEngine.Random.Range(0.8f, 1.2f);
+
+        Vector3 scale = transform.localScale;
+        transform.localScale = new Vector3(scale.x * scaleFactor, scale.y * scaleFactor, 1);
+        
+        transform.Rotate(0f, 0f, UnityEngine.Random.Range(0f, 360f));
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.GameObject().CompareTag("Planet"))
+        if (col.gameObject.CompareTag("Planet"))
         {
+            col.gameObject.GetComponent<Planet>().Damage(10);
             manager.EnemyDestroyed(this);
             Destroy(gameObject);
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public void damage(float amount)
     {
-        if(collision.gameObject.CompareTag("Egg"))
-        {
-            health -= 25;
+        health -= amount;
 
-            if (health == 0)
-            {
-                manager.EnemyDestroyed(this);
-                Destroy(this.gameObject);
-            }
+        if (health <= 0)
+        {
+            manager.EnemyDestroyed(this);
+            Destroy(this.gameObject);
         }
     }
-    
 }
