@@ -459,12 +459,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - numEnemies: 10
+  - numEnemies: 8
+    enemies:
+    - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
+      probability: 1
+      spawnInterval: 3
+  - numEnemies: 11
+    enemies:
+    - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
+      probability: 1
+      spawnInterval: 2
+  - numEnemies: 15
     enemies:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
       probability: 1
       spawnInterval: 1
-  - numEnemies: 15
+  - numEnemies: 20
     enemies:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
       probability: 1
