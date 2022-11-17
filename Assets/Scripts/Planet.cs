@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Planet : MonoBehaviour
 {
@@ -25,7 +26,11 @@ public class Planet : MonoBehaviour
     public void Damage(float amount) 
     {
         health -= amount;
-        Debug.Log("Hit by potato");
+        if (health <= 0)
+        {
+            string currentScene = SceneManager.GetActiveScene().name;
+            SceneManager.LoadScene(currentScene);
+        }
     }
 
     private void PlanetRotate()
