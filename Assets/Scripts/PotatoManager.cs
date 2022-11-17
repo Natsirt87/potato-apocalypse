@@ -91,7 +91,7 @@ public class PotatoManager : MonoBehaviour
     private void StartWave()
     {
         _waveBreakTimer = 0;
-        _waveNumber++;
+        _waveNumber = (_waveNumber + 1) % (waves.Count - 1);
         _enemiesLeft = waves[_waveNumber].numEnemies;
     }
 
