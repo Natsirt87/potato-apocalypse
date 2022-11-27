@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 67949575}
   - component: {fileID: 67949577}
   m_Layer: 8
-  m_Name: BluePlanet
+  m_Name: Planet
   m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -464,22 +464,10 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
       probability: 1
       spawnInterval: 3
-  - numEnemies: 11
-    enemies:
-    - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
-      probability: 1
-      spawnInterval: 2
-  - numEnemies: 15
-    enemies:
-    - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
-      probability: 1
-      spawnInterval: 1
-  - numEnemies: 20
-    enemies:
-    - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
-      probability: 1
-      spawnInterval: 0.5
-  waveBreakTime: 10
+    - enemyPrefab: {fileID: 1272149446653661459, guid: 4cb22eb504b8d1b4689b6a49f760da03, type: 3}
+      probability: 0.8
+      spawnInterval: 5
+  waveBreakTime: 15
   waveText: {fileID: 1381113527}
 --- !u!1 &693690450
 GameObject:

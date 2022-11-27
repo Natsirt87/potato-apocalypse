@@ -29,6 +29,7 @@ public class Wave
 
 public class PotatoManager : MonoBehaviour
 {
+    public GameObject player;
     public List<Wave> waves;
     public float waveBreakTime = 10f;
 
@@ -71,7 +72,10 @@ public class PotatoManager : MonoBehaviour
                 {
                     enemy.ResetSpawnTimer();
                     // TODO: Probability check to determine if the enemy should be spawned
-                    SpawnEnemy(enemy.enemyPrefab);
+                    if (Random.value < enemy.probability)
+                    {
+                        SpawnEnemy(enemy.enemyPrefab);
+                    }
                 }
             }
         }
@@ -91,7 +95,7 @@ public class PotatoManager : MonoBehaviour
     private void StartWave()
     {
         _waveBreakTimer = 0;
-        _waveNumber = (_waveNumber + 1) % (waves.Count - 1);
+        _waveNumber = (_waveNumber + 1) % (waves.Count);
         _enemiesLeft = waves[_waveNumber].numEnemies;
     }
 
@@ -123,6 +127,7 @@ public class PotatoManager : MonoBehaviour
 
         Potato potato = spawnedPotato.GetComponent<Potato>();
         potato.manager = this;
+        potato.player = player;
         _enemies.Add(potato);
     }
 
