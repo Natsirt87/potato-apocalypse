@@ -7,7 +7,9 @@ using UnityEngine;
 public class Potato : MonoBehaviour
 {
     [SerializeField] protected float health = 100f;
+    [SerializeField] protected float planetDamage = 10f;
     public PotatoManager manager;
+    public GameObject player;
 
     protected Rigidbody2D Body;
 
@@ -15,7 +17,7 @@ public class Potato : MonoBehaviour
     {
         Body = GetComponent<Rigidbody2D>();
 
-        float scaleFactor = UnityEngine.Random.Range(0.8f, 1.2f);
+        float scaleFactor = UnityEngine.Random.Range(0.9f, 1.15f);
 
         Vector3 scale = transform.localScale;
         transform.localScale = new Vector3(scale.x * scaleFactor, scale.y * scaleFactor, 1);
@@ -23,11 +25,11 @@ public class Potato : MonoBehaviour
         transform.Rotate(0f, 0f, UnityEngine.Random.Range(0f, 360f));
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    private void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.GameObject().CompareTag("Planet"))
+        if (col.gameObject.CompareTag("Planet"))
         {
-            col.GameObject().GetComponent<Planet>().Damage(10);
+            col.gameObject.GetComponent<Planet>().Damage(planetDamage);
             manager.EnemyDestroyed(this);
             Destroy(gameObject);
         }

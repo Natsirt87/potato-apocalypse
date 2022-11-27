@@ -21,6 +21,11 @@ public class Planet : MonoBehaviour
         {
             Debug.Log("Planet has died");
         }
+
+        if (Input.GetKey(KeyCode.R) && Input.GetKey(KeyCode.C))
+        {
+            ReloadScene();
+        }
     }
 
     public void Damage(float amount) 
@@ -28,13 +33,17 @@ public class Planet : MonoBehaviour
         health -= amount;
         if (health <= 0)
         {
-            string currentScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentScene);
+            ReloadScene();
         }
     }
 
     private void PlanetRotate()
     {
         transform.Rotate(0f, 0f, Time.deltaTime * 360 * rotationSpeed * 0.01f);
+    }
+
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

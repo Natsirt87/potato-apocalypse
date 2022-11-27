@@ -126,7 +126,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.2
-  m_LinearDrag: 2.5
+  m_LinearDrag: 2.3
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -146,6 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8170898d27f4358b711606f7e689f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 40
-  lifetime: 0.75
-  fadeOffset: 0.5
+  damage: 80
+  lifetime: 0.85
+  fadeOffset: 0.55
