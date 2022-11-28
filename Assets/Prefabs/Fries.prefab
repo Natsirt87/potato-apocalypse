@@ -124,10 +124,12 @@ MonoBehaviour:
   planetDamage: 20
   manager: {fileID: 0}
   player: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: e3c0e21305e99db1d80cdb905a249b10, type: 2}
+  hitFlashTime: 0.1
   fry: {fileID: 9004637276428000802, guid: 185dc6b73521a5a4f9fd53a123c7294e, type: 3}
   movementForce: 20
-  shootInterval: 3
-  projectileForce: 200
+  shootInterval: 5
+  projectileForce: 250
   rotPGain: 0.3
   rotDGain: 20
   rotIGain: 0

@@ -8,25 +8,30 @@ using UnityEngine.SceneManagement;
 public class Planet : MonoBehaviour
 {
     // For health bar
-    public float maxHealth = 100f;
-	public float currHealth;
+    public float health = 100f;
 	public HealthBar healthBar;
+    public float damageAnimLength = 1f;
 
     // For Game Over Screen
     public GameOverScreen gameover;
 
     public float rotationSpeed = 1f;
+    
+    private float _damageAnimTime = 0f;
+    private bool _justHit = false;
+
+    private SpriteRenderer _sprite;
 
     void Start() {
-        currHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetMaxHealth(health);
+        _sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         PlanetRotate();
-        if (currHealth <= 0)
+        if (health <= 0)
         {
             Debug.Log("Planet has died");
         }
@@ -35,14 +40,41 @@ public class Planet : MonoBehaviour
         {
             ReloadScene();
         }
+
+        if (_justHit)
+        {
+            _damageAnimTime += Time.deltaTime;
+
+            if (_damageAnimTime <= damageAnimLength)
+            {
+                Color col = _sprite.color;
+                if (_damageAnimTime < damageAnimLength/2)
+                {
+                    col.a = Mathf.Lerp(1, 0.6f, _damageAnimTime / damageAnimLength/2);
+                }
+                else
+                {
+                    col.a = Mathf.Lerp(0.6f, 1, (_damageAnimTime - (damageAnimLength/2)) / (damageAnimLength/2));
+                }
+                _sprite.color = col;
+            }
+            else 
+            {
+                _justHit = false;
+                _damageAnimTime = 0;
+            }
+        }
     }
 
     public void Damage(float amount) 
     {
-        currHealth -= amount;
-        healthBar.SetHealth(currHealth);
+        health -= amount;
+        healthBar.SetHealth(health);
 
-        if (currHealth <= 0)
+        _justHit = true;
+        _damageAnimTime = 0;
+
+        if (health <= 0)
         {
             gameover.Setup();
         }

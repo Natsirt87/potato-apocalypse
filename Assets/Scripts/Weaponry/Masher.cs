@@ -23,8 +23,11 @@ public class Masher : Weapon
         {
             GameObject spawnedLaser = Instantiate(projectile);
 
-            spawnedLaser.transform.right = this.transform.parent.up;
+            Vector3 vectorToMouse = mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            spawnedLaser.transform.rotation = Quaternion.LookRotation(Vector3.forward, vectorToMouse);
+
             spawnedLaser.transform.position = this.transform.position + (transform.parent.up * spawnOffset);
+            spawnedLaser.transform.right = transform.parent.up;
 
             spawnedLaser.transform.Rotate(0f, 0f, -spread / 2 + (((spread) / (numLasers - 1)) * i)); 
             Rigidbody2D laserRB = spawnedLaser.GetComponent<Rigidbody2D>();
