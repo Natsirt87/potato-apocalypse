@@ -2,22 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Planet : MonoBehaviour
 {
-    public float health = 100f;
+    // For health bar
+    public float maxHealth = 100f;
+	public float currHealth;
+	public HealthBar healthBar;
+
+    // For Game Over Screen
+    public GameOverScreen gameover;
+
     public float rotationSpeed = 1f;
-    
-    [SerializeField] private TextMeshProUGUI healthText;
+
+    void Start() {
+        currHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "Planet Health: " + Mathf.Clamp(health, 0, 1000);
-
         PlanetRotate();
-        if (health <= 0)
+        if (currHealth <= 0)
         {
             Debug.Log("Planet has died");
         }
@@ -30,10 +39,12 @@ public class Planet : MonoBehaviour
 
     public void Damage(float amount) 
     {
-        health -= amount;
-        if (health <= 0)
+        currHealth -= amount;
+        healthBar.SetHealth(currHealth);
+
+        if (currHealth <= 0)
         {
-            ReloadScene();
+            gameover.Setup();
         }
     }
 

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1272149446653661459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 30, y: 0, z: 1}
-  m_LocalScale: {x: 0.36, y: 0.36, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: ce9a0e422a9c23249b08ff5d5fb90343, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -126,8 +126,13 @@ MonoBehaviour:
   player: {fileID: 0}
   fry: {fileID: 9004637276428000802, guid: 185dc6b73521a5a4f9fd53a123c7294e, type: 3}
   movementForce: 20
-  shootInterval: 1
-  projectileForce: 5
+  shootInterval: 3
+  projectileForce: 200
+  rotPGain: 0.3
+  rotDGain: 20
+  rotIGain: 0
+  rotIMax: 1
+  rotatePower: 1
 --- !u!60 &4035551839612076314
 PolygonCollider2D:
   m_ObjectHideFlags: 0
