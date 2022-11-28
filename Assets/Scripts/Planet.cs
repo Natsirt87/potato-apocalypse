@@ -41,11 +41,6 @@ public class Planet : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log("Planet collided");
-    }
-
     public void Damage(float amount) 
     {
         currHealth -= amount;
