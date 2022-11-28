@@ -121,7 +121,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  planetDamage: 10
   manager: {fileID: 0}
+  player: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: e3c0e21305e99db1d80cdb905a249b10, type: 2}
+  hitFlashTime: 0.1
   movementForce: 2
   sprite1: {fileID: 21300000, guid: d5a146d73d559314096b3108fd4ff2a3, type: 3}
   sprite2: {fileID: 21300000, guid: 49993ee227b809341b0dc20bf2af4421, type: 3}

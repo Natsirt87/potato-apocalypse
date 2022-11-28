@@ -9,6 +9,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected string shootKey;
     protected bool canShoot = true;
 
+    protected Camera mainCamera;
+
+    void Start()
+    {
+        mainCamera = Camera.main;
+    }
 
     void Update()
     {
