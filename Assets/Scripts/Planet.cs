@@ -12,9 +12,6 @@ public class Planet : MonoBehaviour
 	public float currHealth;
 	public HealthBar healthBar;
 
-    // For Game Over Screen
-    public GameOverScreen gameover;
-
     public float rotationSpeed = 1f;
 
     void Start() {
@@ -44,7 +41,8 @@ public class Planet : MonoBehaviour
 
         if (currHealth <= 0)
         {
-            gameover.Setup();
+            // to load game over scene when planet health == 0
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
