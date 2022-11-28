@@ -16,8 +16,6 @@ public class Planet : MonoBehaviour
     public GameOverScreen gameover;
 
     public float rotationSpeed = 1f;
-    
-    [SerializeField] private TextMeshProUGUI healthText;
 
     void Start() {
         currHealth = maxHealth;
@@ -27,8 +25,6 @@ public class Planet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        healthText.text = "Planet Health: " + Mathf.Clamp(currHealth, 0, 1000);
-
         PlanetRotate();
         if (currHealth <= 0)
         {
