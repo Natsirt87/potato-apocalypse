@@ -12,9 +12,6 @@ public class Planet : MonoBehaviour
 	public HealthBar healthBar;
     public float damageAnimLength = 1f;
 
-    // For Game Over Screen
-    public GameOverScreen gameover;
-
     public float rotationSpeed = 1f;
     
     private float _damageAnimTime = 0f;
@@ -76,7 +73,8 @@ public class Planet : MonoBehaviour
 
         if (health <= 0)
         {
-            gameover.Setup();
+            // to load game over scene when planet health == 0
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
