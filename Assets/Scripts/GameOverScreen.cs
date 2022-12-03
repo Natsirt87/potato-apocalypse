@@ -7,18 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    // display gameover screen
-    public void Setup() {
-        // to pause the game
-        Time.timeScale = 0;
+    // // display gameover screen
+    // public void Setup() {
+    //     // to load game over scene when planet health == 0
+    //     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-        gameObject.SetActive(true);
-    }
+    //     //gameObject.SetActive(true);
+    // }
 
     // Restart button
     public void RestartButton() {
-        // to restart the game
-        Time.timeScale = 1;
         SceneManager.LoadScene("Prototype1");
     }
 

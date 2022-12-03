@@ -41,8 +41,9 @@ public class Fries : Potato
         Body.AddForce((vectorToPlanet / vectorToPlanet.magnitude) * movementForce, ForceMode2D.Force);
     }
 
-    void Update()
+    new void Update()
     {
+        base.Update();
         if (_canShoot)
         {
             if (_shootTimer >= shootInterval)
