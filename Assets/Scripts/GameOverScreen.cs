@@ -17,11 +17,13 @@ public class GameOverScreen : MonoBehaviour
 
     // Restart button
     public void RestartButton() {
-        SceneManager.LoadScene("Prototype1");
+        //SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     // MainMenu button
     public void MainMenuButton() {
-        SceneManager.LoadScene("StartMenu");
+        //SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
     }
 }
