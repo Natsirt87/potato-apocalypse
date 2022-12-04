@@ -8,20 +8,22 @@ public class MasherLaser : Projectile
     public float fadeOffset = 0.5f;
 
     private float _startSpeed;
-    private Rigidbody2D _body;
     private float _lifeTimer = 0f;
     private SpriteRenderer _renderer;
 
-    void Start()
+    new void Start()
     {
-        _body = GetComponent<Rigidbody2D>();
-        _startSpeed = _body.velocity.magnitude;
+        base.Start();
+
+        _startSpeed = body.velocity.magnitude;
         _renderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
+        base.Update();
+
         _lifeTimer += Time.deltaTime;
         if (_lifeTimer >= lifetime)
         {
@@ -37,7 +39,7 @@ public class MasherLaser : Projectile
     {
         if(collision.gameObject.CompareTag("Potato"))
         {
-            collision.gameObject.GetComponent<Potato>().damage(damage * (_body.velocity.magnitude / _startSpeed));
+            collision.gameObject.GetComponent<Potato>().damage(damage * (body.velocity.magnitude / _startSpeed));
             Destroy(this.gameObject);
         }
     }

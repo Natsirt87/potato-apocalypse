@@ -465,12 +465,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 88224007}
+  waveBreakTime: 15
+  procedural: 1
+  enemyIncrease: 0.05
+  potatoProbabilityIncrease: 0.07
+  potatoSpawnDecrease: 0.1
+  friesProbabilityIncrease: 0.2
+  friesSpawnDecrease: 0.1
+  mashedProbabilityIncrease: 0.15
+  mashedSpawnDecrease: 0.04
+  startEnemies: 2
+  enemies:
+  - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
+    probability: 0.8
+    spawnInterval: 3
+  - enemyPrefab: {fileID: 1272149446653661459, guid: 4cb22eb504b8d1b4689b6a49f760da03, type: 3}
+    probability: 0.1
+    spawnInterval: 5
+  - enemyPrefab: {fileID: 1272149446653661459, guid: 97d9d5551c57e9016914d7b85984479f, type: 3}
+    probability: 0
+    spawnInterval: 7.5
   waves:
-  - numEnemies: 5
+  - numEnemies: 10
     enemies:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
       probability: 1
-      spawnInterval: 4
+      spawnInterval: 3
+    - enemyPrefab: {fileID: 1272149446653661459, guid: 97d9d5551c57e9016914d7b85984479f, type: 3}
+      probability: 1
+      spawnInterval: 2
   - numEnemies: 9
     enemies:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
@@ -516,7 +539,6 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 4cb22eb504b8d1b4689b6a49f760da03, type: 3}
       probability: 0.8
       spawnInterval: 2
-  waveBreakTime: 15
   waveText: {fileID: 1381113527}
 --- !u!1 &693690450
 GameObject:
@@ -610,10 +632,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1381113526}
   - {fileID: 758285490}
-  - {fileID: 1696570361}
   - {fileID: 1584791258}
+  - {fileID: 1381113526}
+  - {fileID: 1696570361}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -730,7 +752,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 693690454}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -970,7 +992,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 693690454}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1107,7 +1129,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 693690454}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1218,7 +1240,7 @@ RectTransform:
   - {fileID: 1273827250}
   - {fileID: 1321747364}
   m_Father: {fileID: 693690454}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
