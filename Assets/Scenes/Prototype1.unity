@@ -1331,6 +1331,22 @@ PrefabInstance:
       propertyPath: projectileForce
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1937920241844041260, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: projectileForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4047613147224809906, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4047613147224809906, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4047613147224809906, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.34
+      objectReference: {fileID: 0}
     - target: {fileID: 4943974863686304520, guid: 6cbc2a8ff93f2fb4d83c5e025ca6cb09, type: 3}
       propertyPath: m_LinearDrag
       value: 1.5
