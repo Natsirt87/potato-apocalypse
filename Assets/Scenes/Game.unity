@@ -678,12 +678,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 88224007}
+  waveBreakTime: 15
+  procedural: 1
+  enemyIncrease: 0.05
+  potatoProbabilityIncrease: 0.07
+  potatoSpawnDecrease: 0.1
+  friesProbabilityIncrease: 0.2
+  friesSpawnDecrease: 0.1
+  mashedProbabilityIncrease: 0.15
+  mashedSpawnDecrease: 0.04
+  startEnemies: 2
+  enemies:
+  - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
+    probability: 0.8
+    spawnInterval: 3
+  - enemyPrefab: {fileID: 1272149446653661459, guid: 4cb22eb504b8d1b4689b6a49f760da03, type: 3}
+    probability: 0.1
+    spawnInterval: 5
+  - enemyPrefab: {fileID: 1272149446653661459, guid: 97d9d5551c57e9016914d7b85984479f, type: 3}
+    probability: 0
+    spawnInterval: 7.5
   waves:
-  - numEnemies: 5
+  - numEnemies: 10
     enemies:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
       probability: 1
-      spawnInterval: 4
+      spawnInterval: 3
+    - enemyPrefab: {fileID: 1272149446653661459, guid: 97d9d5551c57e9016914d7b85984479f, type: 3}
+      probability: 1
+      spawnInterval: 2
   - numEnemies: 9
     enemies:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
@@ -729,7 +752,6 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 1272149446653661459, guid: 4cb22eb504b8d1b4689b6a49f760da03, type: 3}
       probability: 0.8
       spawnInterval: 2
-  waveBreakTime: 15
   waveText: {fileID: 1381113527}
 --- !u!1 &693690450
 GameObject:
@@ -1721,7 +1743,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 693690454}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -1976,6 +1998,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444681852}
   m_CullTransparentMesh: 1
+--- !u!95 &1584791262
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575829930}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 47df8cb23cec44f0598915da5c1d647c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1696570360
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 9004637276428000804}
   - component: {fileID: 9004637276428000805}
   - component: {fileID: 7330335502819004074}
-  - component: {fileID: 131723921365978693}
   - component: {fileID: 689598160428502881}
+  - component: {fileID: 1979568376610743343}
   m_Layer: 7
   m_Name: SlicerLaser
   m_TagString: Egg
@@ -124,19 +124,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &131723921365978693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9004637276428000802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96c100e20354c73c9bf27f5c9454e22e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 100
 --- !u!61 &689598160428502881
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,3 +150,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6132638, y: 0.291784}
   m_EdgeRadius: 0
+--- !u!114 &1979568376610743343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9004637276428000802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac947e15253c46e79e9fb0d3333d288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 100
+  explosion: {fileID: 7179722581328876585, guid: 199a97413a4b5464d887079c5c975daf, type: 3}
