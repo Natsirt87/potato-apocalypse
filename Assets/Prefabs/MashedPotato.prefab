@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1272149446653661470}
   - component: {fileID: 1272149446653661457}
   - component: {fileID: 305868661047858567}
-  - component: {fileID: 1786610716070588728}
   - component: {fileID: 2637365654596625998}
   - component: {fileID: 9085096230528195032}
+  - component: {fileID: 3513514319103552835}
   m_Layer: 6
   m_Name: MashedPotato
   m_TagString: Potato
@@ -235,30 +235,6 @@ PolygonCollider2D:
       - {x: 1.175, y: -3.0149999}
       - {x: 1.365, y: -2.935}
       - {x: 1.5649999, y: -2.845}
---- !u!114 &1786610716070588728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1272149446653661459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d3b33a30692c89e8c4164b1c89b56e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 500
-  planetDamage: 20
-  manager: {fileID: 0}
-  player: {fileID: 0}
-  flashMaterial: {fileID: 2100000, guid: e3c0e21305e99db1d80cdb905a249b10, type: 2}
-  hitFlashTime: 0.1
-  movementForce: 25
-  sprite1: {fileID: 21300000, guid: 237296c2845092c4ca04f207536471dc, type: 3}
-  sprite2: {fileID: 21300000, guid: c347c7937d5b83c498edc4e68753703c, type: 3}
-  shockInterval: 2.5
-  shockwaveEffect: {fileID: 1399357774869260525}
-  shockwaveLength: 0.65
 --- !u!58 &2637365654596625998
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -295,6 +271,30 @@ PointEffector2D:
   m_ForceMode: 0
   m_Drag: 0
   m_AngularDrag: 0
+--- !u!114 &3513514319103552835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272149446653661459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ce4d7a606844be29a6730552cd2b60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
+  planetDamage: 20
+  manager: {fileID: 0}
+  player: {fileID: 0}
+  flashMaterial: {fileID: 2100000, guid: e3c0e21305e99db1d80cdb905a249b10, type: 2}
+  hitFlashTime: 0.1
+  movementForce: 25
+  sprite1: {fileID: 21300000, guid: 237296c2845092c4ca04f207536471dc, type: 3}
+  sprite2: {fileID: 21300000, guid: c347c7937d5b83c498edc4e68753703c, type: 3}
+  shockInterval: 3
+  shockwaveEffect: {fileID: 1399357774869260525}
+  shockwaveLength: 0.65
 --- !u!1001 &7426330019701165807
 PrefabInstance:
   m_ObjectHideFlags: 0
