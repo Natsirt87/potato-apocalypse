@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178166109987299548}
   m_LocalRotation: {x: -0, y: -0, z: -0.7046905, w: 0.7095149}
-  m_LocalPosition: {x: -0.3, y: 4.08, z: 0}
-  m_LocalScale: {x: 0.52787995, y: 0.5277528, z: 1}
+  m_LocalPosition: {x: -0.1, y: 3.92, z: 0}
+  m_LocalScale: {x: 0.47761887, y: 0.38934702, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4943974863686304522}
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 9004637276428000802, guid: ebcc6656aa7504c22a7a5beb7aeb377a, type: 3}
-  shootKey: 
+  shootKey: i
   projectileForce: 10
   shootInterval: 0.2
   spawnOffset: 1
@@ -349,6 +349,7 @@ MonoBehaviour:
   weapons:
   - {fileID: 8589195536887593482}
   - {fileID: 4197267891150717895}
+  - {fileID: 1937920241844041260}
 --- !u!60 &7520842992672438923
 PolygonCollider2D:
   m_ObjectHideFlags: 0
