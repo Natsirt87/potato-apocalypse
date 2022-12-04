@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1272149446653661459}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 30, y: 0, z: 1}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,7 +99,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 20
+  m_Mass: 10
   m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -120,14 +120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecefecfec374c22468be121241888919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 300
-  planetDamage: 20
+  health: 200
+  planetDamage: 15
   manager: {fileID: 0}
   player: {fileID: 0}
   flashMaterial: {fileID: 2100000, guid: e3c0e21305e99db1d80cdb905a249b10, type: 2}
   hitFlashTime: 0.1
   fry: {fileID: 9004637276428000802, guid: 185dc6b73521a5a4f9fd53a123c7294e, type: 3}
-  movementForce: 20
+  movementForce: 10
   shootInterval: 5
   projectileForce: 250
   rotPGain: 0.3
