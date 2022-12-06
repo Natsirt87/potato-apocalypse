@@ -679,7 +679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 88224007}
   waveBreakTime: 15
-  procedural: 1
+  procedural: 0
   enemyIncrease: 0.05
   potatoProbabilityIncrease: 0.07
   potatoSpawnDecrease: 0.1
