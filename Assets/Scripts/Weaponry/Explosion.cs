@@ -10,7 +10,7 @@ public class Explosion : MonoBehaviour{
     void Start()
     {
         GetComponent<Animator>().Play("exploAni");
-        Destroy(gameObject, 1f);
+        Destroy(gameObject, .4f);
     }
 
 }

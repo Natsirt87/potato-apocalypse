@@ -100,7 +100,7 @@ MonoBehaviour:
   projectile: {fileID: 9004637276428000802, guid: ebcc6656aa7504c22a7a5beb7aeb377a, type: 3}
   shootKey: i
   projectileForce: 10
-  shootInterval: 0.2
+  shootInterval: 1.5
   spawnOffset: 1
 --- !u!1 &2992707861074058970
 GameObject:
@@ -1313,4 +1313,4 @@ MonoBehaviour:
   shootInterval: 0.65
   spawnOffset: 1
   numLasers: 6
-  spread: 20
+  spread: 30

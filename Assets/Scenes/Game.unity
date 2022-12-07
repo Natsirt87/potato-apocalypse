@@ -679,14 +679,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 88224007}
   waveBreakTime: 15
-  procedural: 0
-  enemyIncrease: 0.05
-  potatoProbabilityIncrease: 0.07
-  potatoSpawnDecrease: 0.1
-  friesProbabilityIncrease: 0.2
-  friesSpawnDecrease: 0.1
-  mashedProbabilityIncrease: 0.15
-  mashedSpawnDecrease: 0.04
+  procedural: 1
+  enemyIncrease: 0.03
+  potatoProbabilityIncrease: 0.05
+  potatoSpawnDecrease: 0.07
+  friesProbabilityIncrease: 0.12
+  friesSpawnDecrease: 0.05
+  mashedProbabilityIncrease: 0.04
+  mashedSpawnDecrease: 0.02
   startEnemies: 2
   enemies:
   - enemyPrefab: {fileID: 1272149446653661459, guid: 8e5007f257db7c744a0ec25fb03f74af, type: 3}
@@ -2025,7 +2025,7 @@ RectTransform:
   m_GameObject: {fileID: 1696570360}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 710272650}
@@ -2036,7 +2036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 22.440002}
+  m_AnchoredPosition: {x: 0, y: 15}
   m_SizeDelta: {x: 178.935, y: 21.784}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1696570362
