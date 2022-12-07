@@ -9,6 +9,13 @@ public class Projectile : MonoBehaviour
 {
     public float damage = 25f;
 
+    protected Rigidbody2D body;
+
+    public void Start()
+    {
+        body = GetComponent<Rigidbody2D>();
+    }
+
     void OnBecameInvisible() // destroy the projectile on collision with enemy
     {
         Destroy(this.gameObject);
@@ -25,6 +32,10 @@ public class Projectile : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        Debug.Log("Collided");
+    }
+
+    public void Update()
+    {
+        transform.right = body.velocity.normalized;
     }
 }

@@ -61,6 +61,7 @@ public class Planet : MonoBehaviour
                 _damageAnimTime = 0;
             }
         }
+
     }
 
     public void Damage(float amount) 

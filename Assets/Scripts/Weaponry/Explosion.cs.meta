@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/Weaponry/Explosion.cs.meta
+guid: 3c904bd06c73e4d11b4729454431897b
+========
+guid: 14d3b33a30692c89e8c4164b1c89b56e
+>>>>>>>> 1e01c692dd7f188c398f15b32a44203aa30c10eb:Assets/Scripts/Enemies/MashedPotato.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

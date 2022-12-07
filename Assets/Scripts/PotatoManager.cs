@@ -30,8 +30,27 @@ public class Wave
 public class PotatoManager : MonoBehaviour
 {
     public GameObject player;
-    public List<Wave> waves;
     public float waveBreakTime = 10f;
+
+    [Header("Procedural Tuning")]
+    public Boolean procedural = true;
+    public float enemyIncrease = .2f;
+
+    public float potatoProbabilityIncrease = .2f;
+    public float potatoSpawnDecrease = .4f;
+
+    public float friesProbabilityIncrease = .1f;
+    public float friesSpawnDecrease = .3f;
+
+    public float mashedProbabilityIncrease = .06f;
+    public float mashedSpawnDecrease = .2f;
+
+    public int startEnemies = 6;
+    public List<WaveEnemy> enemies;
+
+    [Header("Manual Waves")]
+    public List<Wave> waves;
+    
 
     [SerializeField] private TextMeshProUGUI waveText;
 
@@ -40,12 +59,15 @@ public class PotatoManager : MonoBehaviour
     private Vector2 _bounds;
     private List<Potato> _enemies;
     private float _waveBreakTimer = 0;
+    private int _lastEnemyCount;
 
     // Start is called before the first frame update
     void Start()
     {
         _bounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         _enemies = new List<Potato>();
+        _enemiesLeft = startEnemies;
+        _lastEnemyCount = _enemiesLeft;
         StartWave();
     }
 
@@ -62,7 +84,8 @@ public class PotatoManager : MonoBehaviour
 
         if (_enemiesLeft > _enemies.Count)
         {
-            foreach (WaveEnemy enemy in waves[_waveNumber].enemies)
+            List<WaveEnemy> enemyList = procedural ? enemies : waves[_waveNumber].enemies;
+            foreach (WaveEnemy enemy in enemyList)
             {
                 if (!enemy.SpawnTimerReached())
                 {
@@ -95,8 +118,27 @@ public class PotatoManager : MonoBehaviour
     private void StartWave()
     {
         _waveBreakTimer = 0;
-        _waveNumber = (_waveNumber + 1) % (waves.Count);
-        _enemiesLeft = waves[_waveNumber].numEnemies;
+        
+        if (!procedural)
+        {
+            _waveNumber = (_waveNumber + 1) % (waves.Count);
+            _enemiesLeft = waves[_waveNumber].numEnemies;
+        }
+        else
+        {
+            _waveNumber++;
+            _enemiesLeft = _lastEnemyCount + (int)(3 + _enemiesLeft * enemyIncrease);
+            _lastEnemyCount = _enemiesLeft;
+
+            enemies[0].probability += potatoProbabilityIncrease;
+            enemies[0].spawnInterval -= enemies[0].spawnInterval > 1.5 ? potatoSpawnDecrease : 0;
+
+            enemies[1].probability += friesProbabilityIncrease;
+            enemies[1].spawnInterval -= enemies[1].spawnInterval > 2.5 ? friesSpawnDecrease : 0;
+
+            enemies[2].probability += mashedProbabilityIncrease;
+            enemies[2].spawnInterval -= enemies[2].spawnInterval > 3 ? mashedSpawnDecrease : 0;
+        }
     }
 
     private void SpawnEnemy(GameObject enemyType)
