@@ -17,8 +17,8 @@ title: Potato Apocalypse
 email: potato@apocalypse.com
 description: >- # this means to ignore newlines until "baseurl:"
   A revolution in the gaming industry. A shockingly brave piece of electronic entertainment gauranteed to impress and amaze. The new standard for all things video games. This is: Potato Apocalypse.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/potato-apocalypse" # the subpath of your site, e.g. /blog
+url: "https://natsirt87.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
