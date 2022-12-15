@@ -62,7 +62,11 @@ The trailer for the game is viewable [here](https://www.youtube.com/watch?v=CPCi
 
 ## Screenshots
 
-TODO: Put some screenshots here
+![Screenshot1](./screenshots/GameScreenshot1.png)
+![Screenshot2](./screenshots/GameScreenshot2.png)
+![Screenshot3](./screenshots/GameScreenshot3.png)
+![Screenshot4](./screenshots/GameScreenshot4.png)
+![Screenshot5](./screenshots/GameScreenshot5.png)
 
 ## Presentations
 
@@ -72,11 +76,6 @@ TODO: Put some screenshots here
 
 ## Team Reflection
 
-Reflection time.
-### Small image
+The one thing we did really well was communication, and members worked on the project by helping each other effectively for more optimization and better outputs. The evidence can be the Trello tracking progress and our discord group chat. By dividing tasks, we could collaborate on more functions and issues for both high and low priorities.
 
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+If we had another 2 weeks to work more on the game, the 3 highest priority items would be adding more enemy types, adding more weapons and their progression, and shooting mechanics. These are the main essentials of our game, and it would be great to keep improving them.
