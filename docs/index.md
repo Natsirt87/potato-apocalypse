@@ -44,8 +44,8 @@ You can see the feedback [here](https://docs.google.com/spreadsheets/d/1kWh5rJii
 ## Credits
 
 Tristan Commons: Lead Gameplay Programmer\
-Veronika Bykova: User Experience Engineer\
-Chanhee Park: Gameplay & UX Programmer\
+Veronika Bykova: Gameplay & UX Programmer\
+Chanhee Park: UI/UX Engineer\
 Tyler Schmale: Technical Artist
 
 ## References
